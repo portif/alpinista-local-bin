@@ -1,0 +1,1 @@
+ip -br -c link | nl
