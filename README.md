@@ -1,2 +1,5 @@
 # alpinista-local-bin
-/usr/local/bin for alpinista VM
+
+`/usr/local/bin` for alpinista VM
+
+
