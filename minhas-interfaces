@@ -1,1 +1,2 @@
-ip -br -c link | nl
+echo "Para listar suas interfaces de rede, execute:"
+echo "  ip -br -c link | nl"

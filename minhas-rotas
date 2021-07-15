@@ -1,0 +1,2 @@
+echo "Para listar suas rotas para IPv4, execute:"
+echo "  ip -br -c -4 route | nl"
