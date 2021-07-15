@@ -1,0 +1,120 @@
+#!/usr/bin/python3
+
+'''
+Pequeno tutor de um Instituto Computacional.
+'''
+
+import fire
+
+class Diretorio:
+
+    '''Exemplos de operações CRUD que podem ser executadas em diretórios.'''
+
+    def criar(self):
+        '''Resumo de como criar um diretório.'''
+
+        return '''\
+- Criar um diretório:
+  mkdir {{diretorio}}
+
+- Criar diretórios recursivamente
+  mkdir -p {{caminho/para/diretorio}}
+
+'''
+
+    def ler(self):
+        '''Resumo de como ler um diretório.'''
+
+        return '''\
+1. Ir para o diretório:
+   cd {{caminho/para/diretorio}}
+2. Listar arquivos
+   ls
+3. Listar arquivos ocultos
+   ls -a
+4. Listar arquivos ocultos menos (.) e (..)
+   ls -A
+
+Obs.:
+  "." simboliza o diretório atual (Ex.: ./um-programa )
+  ".." simboliza o diretório pai (Ex.: ls ../ )
+'''
+
+    def atualizar(self):
+        '''Resumo de como atualizar um diretório.'''
+
+        return '''\
+- Excluir um arquivo:
+  rm {{arquivo}}
+
+- Excluir arquivo(s) baseado em padrões (glob):
+  rm *.{{extensão}}
+
+- Copiar arquivos:
+  cp {{caminho/para/arquivo(s)}} .
+
+- Copiar diretórios inteiros para o diretório atual:
+  cp -r {{caminho/para/arquivo(s)}} .
+
+- Renomear um arquivo:
+  mv {{nome-velho}} {{nome-novo}}
+
+- Mover um arquivo de outro diretório:
+  mv {{caminho/para/arquivo(s)}} .
+
+- Clonar um repositório do Git:
+  git clone {{url}}
+
+- Trazer atualizações feitas em repositório remoto:
+  git pull
+
+- Descompactar um arquivo:
+  unzip {{arquivo.zip}}
+  tar zxvf {{arquivo.tar.gz}}
+  tar jxvf {{arquivo.tar.bz2}}
+'''
+
+    def excluir(self):
+        '''Resumo de como excluir um diretório.'''
+
+        return '''\
+- Excluir um diretório vazio:
+  rmdir {{caminho/para/diretorio}}
+- Excluir um diretório e todo seu conteúdo:
+  rm -r {{caminho/para/diretorio}}
+'''
+
+class Arquivo:
+    '''Exemplos de operações CRUD que podem ser executadas em arquivos.'''
+
+    def criar(self):
+        '''Resumo de como criar um diretório.'''
+
+        return f'''\
+'''
+
+    def ler(self):
+        '''Resumo de como ler um diretório.'''
+
+        return f'''\
+'''
+
+    def atualizar(self):
+        '''Resumo de como atualizar um diretório.'''
+
+        return f'''\
+'''
+
+    def excluir(self):
+        '''Resumo de como excluir um diretório.'''
+
+        return f'''\
+'''
+
+class Tubulacao:
+    def __init__(self):
+        self.diretorio = Diretorio()
+        self.arquivo = Arquivo()
+
+if __name__ == '__main__':
+    fire.Fire(Tubulacao)
