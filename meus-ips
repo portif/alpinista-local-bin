@@ -1,2 +1,3 @@
-echo "Para listar seus enderecos IPv4, execute:"
-echo "  ip -br -c -4 address | nl"
+#!/bin/sh
+
+ip -br -c -4 address | nl

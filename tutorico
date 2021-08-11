@@ -28,10 +28,13 @@ class Diretorio:
         return '''\
 1. Ir para o diretório:
    cd {{caminho/para/diretorio}}
+
 2. Listar arquivos
    ls
+
 3. Listar arquivos ocultos
    ls -a
+
 4. Listar arquivos ocultos menos (.) e (..)
    ls -A
 
@@ -80,6 +83,7 @@ Obs.:
         return '''\
 - Excluir um diretório vazio:
   rmdir {{caminho/para/diretorio}}
+
 - Excluir um diretório e todo seu conteúdo:
   rm -r {{caminho/para/diretorio}}
 '''
@@ -88,27 +92,68 @@ class Arquivo:
     '''Exemplos de operações CRUD que podem ser executadas em arquivos.'''
 
     def criar(self):
-        '''Resumo de como criar um diretório.'''
+        '''Resumo de como criar um arquivo.'''
 
-        return f'''\
+        return '''\
+- Criar um arquivo vazio:
+  touch {{nome-do-arquivo}}
+
+- Criar um arquivo com editor de texto de linha de comando:
+  {{editor}} {{nome-do-arquivo}}
+
+- Criar um arquivo a partir da saída de um comando:
+  {{comando}} > {{nome-do-arquivo}}
 '''
 
     def ler(self):
-        '''Resumo de como ler um diretório.'''
+        '''Resumo de como ler um arquivo.'''
 
         return f'''\
+- Leitura de arquivo curto:
+  cat {{nome-do-arquivo}}
+
+- Leitura de arquivo longo:
+  less {{nome-do-arquivo}}
+  bat {{nome-do-arquivo}}
+ 
 '''
 
     def atualizar(self):
-        '''Resumo de como atualizar um diretório.'''
+        '''Resumo de como atualizar um arquivo.'''
 
         return f'''\
+- Atualizar a data de modificação do arquivo:
+  touch {{nome-do-arquivo}}
+
+- Alterar o arquivo com editor de texto de linha de comando:
+  {{editor}} {{nome-do-arquivo}}
+
+- Atualizar o arquivo a partir da saída de um comando:
+  {{comando}} >> {{nome-do-arquivo}}
+
+- Substituir trechos em arquivos
+  sed -i "s/{{trecho_procurado}}/{{trecho_novo}}/g"  {{nome-do-arquivo}}
 '''
 
     def excluir(self):
-        '''Resumo de como excluir um diretório.'''
+        '''Resumo de como excluir um arquivo.'''
 
         return f'''\
+ - Remove arquivos de localizações arbitrárias:
+   rm {{caminho/para/arquivo}} {{caminho/para/outro/arquivo}}
+
+ - Remove recursivamente um diretório e todos seus subdiretórios:
+   rm -r {{caminho/para/diretório}}
+
+ - Remove forçosamente um diretório, sem solicitar a confirmação ou mostrando mensagens de erro:
+   rm -rf {{caminho/para/diretório}}
+
+ - Remove interativamente vários arquivos, com um aviso antes de cada remoção:
+   rm -i {{arquivo(s)}}
+
+ - Remove arquivos no modo detalhado, exibindo uma mensagem para cada arquivo removido:
+   rm -v {{caminho/para/diretório/*}}
+
 '''
 
 class Tubulacao:
