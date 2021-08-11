@@ -1,0 +1,13 @@
+#!/bin/sh
+
+IP=$(ip -br a | egrep -o '192.168.56.[0-9]+')
+
+cat << FIM
+Você está no diretório: $PWD
+Você pode acessar o conteúdo dele por seu navegador da web. Acesse:
+- http://${IP}:8000
+
+Para interromper seu servidor HTTP, pressione as teclas CTRL+C.
+FIM
+
+python3 -m http.server
