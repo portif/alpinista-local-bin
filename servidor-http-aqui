@@ -11,3 +11,4 @@ Para interromper seu servidor HTTP, pressione as teclas CTRL+C.
 FIM
 
 python3 -m http.server
+
