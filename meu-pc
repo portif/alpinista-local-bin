@@ -1,0 +1,12 @@
+#!/bin/bash
+
+PC="pc-${USER}"
+CONT=$(lxc list -c n ${PC} --format=csv)
+
+if [ "${CONT}" == "" ]; then
+    lxc launch images:debian/11 $PC
+fi
+
+figlet $(echo $PC | tr '[a-z]' '[A-Z]') | lolcat
+
+lxc exec $PC bash
