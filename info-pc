@@ -1,0 +1,8 @@
+#!/bin/bash
+
+PC="pc-${USER}"
+lxc info $PC | batcat -l yaml
+
+
+
+

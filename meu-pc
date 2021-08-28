@@ -9,4 +9,5 @@ fi
 
 figlet $(echo $PC | tr '[a-z]' '[A-Z]') | lolcat
 
+lxc start $PC
 lxc exec $PC bash

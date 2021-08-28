@@ -1,0 +1,9 @@
+#!/bin/bash
+
+PC="pc-${USER}"
+
+echo "Nome, Endereço IPv4 e estado dos contêineres"
+lxc list -c n4s
+
+
+

@@ -1,0 +1,24 @@
+#!/bin/bash
+
+if [ "$#" -ne 1 ]; then
+    echo "Uso: ${0} {docx|html|odt|pdf}"
+    exit 1
+fi
+
+EXT=$1
+MD=/tmp/passwd.md
+HOST=$(hostname)
+
+cat << FIM > ${MD}
+
+# Usuários de ${HOST}
+
+Arquivo: \`/etc/passwd\`
+
+| Conta | Senha | UID | GID | GECOS | Diretório | Interpretador |
+| ----- | ----- | --- | --- | ----- | --------- | ------------- |  
+FIM
+
+getent passwd | sed 's/:/ | /g;s/^/| /;s/$/ |/' >> ${MD}
+
+pandoc -V geometry:landscape  -o /var/www/html/usuarios-${HOST}.${EXT} ${MD}
