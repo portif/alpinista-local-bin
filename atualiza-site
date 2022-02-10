@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd /srv/projeto-site-alpinista
+git pull
+mkdocs build
